@@ -104,16 +104,25 @@ h2 {
 
 .photo {
   flex: 0 0 auto;
-  width: 150px;
-  height: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
 }
 .photo img {
-  width: 100%;
-  height: 100%;
+  width: 150px;
+  height: 190px;
   object-fit: cover;
   border-radius: 8px;
   border: 1px solid var(--line);
   background: var(--thumb-bg);
+}
+.photo-emails { text-align: center; }
+.photo-emails a {
+  display: block;
+  font-size: .8rem;
+  line-height: 1.5;
+  white-space: nowrap;
 }
 
 /* ---------- Sections ---------- */
@@ -239,7 +248,9 @@ h2 {
     align-items: flex-start;
     gap: 18px;
   }
-  .photo { width: 120px; height: 150px; }
+  .photo { align-items: flex-start; }
+  .photo img { width: 120px; height: 150px; }
+  .photo-emails { text-align: left; }
   .name { font-size: 1.55rem; }
   .name-native { display: inline-block; font-size: 1.05rem; margin-left: 0; }
 
