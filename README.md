@@ -4,7 +4,6 @@ Personal academic website for **Ismail R. Mohamed** — PhD student, ECE, UT Dal
 Live at **https://ismail-r-mohamed.github.io**.
 
 Plain single-page site (no Jekyll, no build step): `index.html` + `style.css` + `images/`.
-Modeled on the Jon Barron / Zishen Wan single-file academic template.
 
 ## Editing
 
