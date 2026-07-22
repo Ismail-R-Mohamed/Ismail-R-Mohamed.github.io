@@ -1,0 +1,265 @@
+/* =========================================================
+   Ismail R. Mohamed — personal site
+   Single accent color, system fonts, light + dark, responsive.
+   ========================================================= */
+
+:root {
+  --accent: #1f6feb;
+  --text: #1a1a1a;
+  --muted: #5c6470;
+  --bg: #ffffff;
+  --line: #e6e8eb;
+  --thumb-bg: #f2f4f6;
+
+  /* News category tags */
+  --paper: #1a7f37;   /* green  */
+  --award: #cf222e;   /* red    */
+  --workshop: #8250df;/* purple */
+  --service: #6e7781; /* gray   */
+
+  --maxw: 820px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent: #58a6ff;
+    --text: #e6edf3;
+    --muted: #9aa4b2;
+    --bg: #0d1117;
+    --line: #21262d;
+    --thumb-bg: #161b22;
+
+    --paper: #3fb950;
+    --award: #f85149;
+    --workshop: #a371f7;
+    --service: #8b949e;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+               Arial, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 48px 24px 24px;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+/* Links that aren't live yet (Scholar, PDFs) */
+.todo {
+  color: var(--muted);
+  font-style: italic;
+  cursor: default;
+}
+.todo:hover { text-decoration: none; }
+
+h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0 0 .6em;
+  padding-bottom: .3em;
+  border-bottom: 1px solid var(--line);
+}
+
+/* ---------- Header ---------- */
+.header {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 34px;
+}
+.header-text { flex: 1 1 auto; min-width: 0; }
+
+.name {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin: 0 0 .25em;
+  line-height: 1.2;
+}
+.name-native {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--muted);
+  margin-left: .35em;
+  white-space: nowrap;
+}
+.tagline {
+  font-size: 1.02rem;
+  margin: 0 0 .8em;
+}
+.affil { margin: .15em 0; }
+.location { margin: .15em 0; color: var(--muted); }
+
+.links {
+  margin-top: .9em;
+  font-weight: 500;
+}
+.links .sep { color: var(--line); margin: 0 .35em; }
+
+.photo {
+  flex: 0 0 auto;
+  width: 150px;
+  height: 190px;
+}
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--thumb-bg);
+}
+
+/* ---------- Sections ---------- */
+.section { margin: 30px 0; }
+.section p { margin: .5em 0; }
+
+.interests {
+  margin: .5em 0 0;
+  padding-left: 1.2em;
+}
+.interests li { margin: .15em 0; }
+
+/* ---------- News ---------- */
+.news-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.news-list li {
+  margin: .5em 0;
+  padding-left: 0;
+}
+.date {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  margin-right: .3em;
+}
+.tag {
+  display: inline-block;
+  font-size: .74rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  padding: .08em .5em;
+  border-radius: 4px;
+  margin-right: .35em;
+  color: #fff;
+  vertical-align: baseline;
+}
+.tag-paper    { background: var(--paper); }
+.tag-award    { background: var(--award); }
+.tag-workshop { background: var(--workshop); }
+.tag-service  { background: var(--service); }
+
+/* ---------- Publications ---------- */
+.pub {
+  display: flex;
+  gap: 20px;
+  margin: 22px 0;
+  align-items: flex-start;
+}
+.pub-thumb {
+  flex: 0 0 auto;
+  width: 155px;
+}
+.pub-thumb img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: var(--thumb-bg);
+  display: block;
+}
+.pub-body { flex: 1 1 auto; min-width: 0; }
+.pub-title { font-weight: 700; margin-bottom: .15em; }
+.pub-authors { margin-bottom: .1em; }
+.pub-venue { color: var(--muted); margin-bottom: .1em; }
+.toappear {
+  color: var(--award);
+  font-style: normal;
+  font-weight: 600;
+}
+.pub-links { margin-bottom: .35em; font-size: .95rem; }
+.pub-desc { margin: .35em 0 0; }
+
+/* ENACT compact row: indent to align with entries that have a thumbnail */
+.pub-compact { margin: 18px 0; padding-left: 175px; }
+
+/* ---------- Projects ---------- */
+.proj { margin: 14px 0; }
+.proj-name { font-weight: 600; }
+.proj-tech {
+  font-size: .8rem;
+  font-weight: 500;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: .05em .45em;
+  margin-left: .5em;
+  white-space: nowrap;
+}
+.proj-desc { margin: .15em 0 0; color: var(--text); }
+.proj-more { margin-top: 18px; color: var(--muted); }
+.proj-more .sep { margin: 0 .4em; }
+
+/* ---------- CV lists ---------- */
+.cv-list { list-style: none; margin: 0; padding: 0; }
+.cv-list li {
+  margin: .35em 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.cv-role { font-weight: 500; }
+.cv-date { color: var(--muted); white-space: nowrap; }
+
+/* ---------- Footer ---------- */
+.footer {
+  margin-top: 48px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  text-align: right;
+  font-size: .82rem;
+  color: var(--muted);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 620px) {
+  .wrap { padding: 32px 18px 20px; }
+  .header {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 18px;
+  }
+  .photo { width: 120px; height: 150px; }
+  .name { font-size: 1.55rem; }
+  .name-native { display: inline-block; font-size: 1.05rem; margin-left: 0; }
+
+  .pub { flex-direction: column; gap: 10px; }
+  .pub-thumb { width: 100%; max-width: 260px; }
+  .pub-compact { padding-left: 0; }
+
+  .cv-list li { flex-direction: column; gap: 0; }
+  .cv-date { white-space: normal; }
+}

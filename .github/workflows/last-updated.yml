@@ -1,0 +1,45 @@
+name: Stamp last-updated date
+
+# Runs on every push to main. Rewrites the date between the
+# <!--LAST_UPDATED_START--> / <!--LAST_UPDATED_END--> markers in index.html,
+# then commits with "[skip ci]" so the stamp commit does not re-trigger this
+# workflow (avoids an infinite loop).
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stamp-last-updated
+  cancel-in-progress: false
+
+jobs:
+  stamp:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Stamp current date into footer
+        run: |
+          DATE="$(date -u '+%B %Y')"
+          echo "Stamping: $DATE"
+          # Replace whatever sits between the two HTML markers.
+          perl -0pi -e "s/(<!--LAST_UPDATED_START-->).*?(<!--LAST_UPDATED_END-->)/\${1}${DATE}\${2}/s" index.html
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- index.html; then
+            echo "No change to date; nothing to commit."
+          else
+            git add index.html
+            git commit -m "chore: stamp last-updated date [skip ci]"
+            git push
+          fi
