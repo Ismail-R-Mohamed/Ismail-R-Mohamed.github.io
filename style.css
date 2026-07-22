@@ -3,6 +3,16 @@
    Single accent color, system fonts, light + dark, responsive.
    ========================================================= */
 
+/* Aref Ruqaa (SIL OFL) — classical Ottoman calligraphy style, self-hosted,
+   used for the Arabic name in the header. */
+@font-face {
+  font-family: 'Aref Ruqaa';
+  src: url('fonts/aref-ruqaa-arabic-700-normal.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --accent: #1f6feb;
   --text: #1a1a1a;
@@ -77,8 +87,9 @@ h2 {
   text-align: center;
 }
 .name-native {
-  font-size: 1.25rem;
-  font-weight: 500;
+  font-family: 'Aref Ruqaa', serif;
+  font-size: 1.45rem;
+  font-weight: 700;
   color: var(--muted);
   margin-left: .35em;
   white-space: nowrap;
