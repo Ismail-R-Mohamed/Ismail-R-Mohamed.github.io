@@ -20,25 +20,12 @@
   --maxw: 820px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --accent: #58a6ff;
-    --text: #e6edf3;
-    --muted: #9aa4b2;
-    --bg: #0d1117;
-    --line: #21262d;
-    --thumb-bg: #161b22;
-
-    --paper: #3fb950;
-    --award: #f85149;
-    --workshop: #a371f7;
-    --service: #8b949e;
-  }
-}
+/* Light by default: the site stays light regardless of the visitor's
+   system color-scheme preference. (Dark @media block intentionally removed.) */
 
 * { box-sizing: border-box; }
 
-html { -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; color-scheme: light; }
 
 body {
   margin: 0;
