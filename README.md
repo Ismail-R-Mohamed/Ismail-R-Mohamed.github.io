@@ -24,4 +24,3 @@ current month/year between the `<!--LAST_UPDATED_START--> … <!--LAST_UPDATED_E
 - Photo (`images/photo-placeholder.svg`)
 - Google Scholar link (header) — marked "[to add]"
 - Publication PDF links (PRISM) — marked "[to add]"
-- PRISM figure thumbnail (`images/prism-placeholder.svg`)

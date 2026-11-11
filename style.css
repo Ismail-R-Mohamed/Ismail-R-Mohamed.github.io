@@ -189,7 +189,7 @@ h2 {
 }
 .pub-thumb {
   flex: 0 0 auto;
-  width: 155px;
+  width: 240px;
 }
 .pub-thumb img {
   width: 100%;
@@ -268,7 +268,7 @@ h2 {
   .links { text-align: left; }
 
   .pub { flex-direction: column; gap: 10px; }
-  .pub-thumb { width: 100%; max-width: 260px; }
+  .pub-thumb { width: 100%; max-width: 420px; }
   .pub-compact { padding-left: 0; }
 
   .cv-list li { flex-direction: column; gap: 0; }
